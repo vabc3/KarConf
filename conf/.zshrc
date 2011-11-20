@@ -91,3 +91,4 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
+bindkey "\e[3~" delete-char
