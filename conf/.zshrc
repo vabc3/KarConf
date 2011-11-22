@@ -1,3 +1,44 @@
+ 
+##在命令前插入 sudo {{{
+#定义功能
+sudo-command-line() {
+[[ -z $BUFFER ]] && zle up-history
+[[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
+zle end-of-line
+}
+zle -N sudo-command-line
+#定义快捷键为： [Esc] [Esc]
+bindkey "\e\e" sudo-command-line
+#}}}
+ 
+
+
+
+
+
+#直接按tab显示目录
+user-complete(){
+    if [[ -n $BUFFER ]] ; then   
+        zle expand-or-complete
+    else
+        BUFFER="cd "
+        zle end-of-line
+        zle expand-or-complete
+    fi }
+zle -N user-complete
+bindkey "\t" user-complete
+
+
+
+#路径别名
+hash -d kc="/home/rquiss/git/KarConf"
+
+
+
+#错误修正
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+#启用等号
+unsetopt equals
 #color{{{
 #autoload colors
 #colors
@@ -57,7 +98,7 @@ export SAVEHIST=300000
 export HISTFILE=~/.zhistory
 # append command to history file once executed
 setopt inc_append_history
-
+setopt EXTENDED_HISTORY
 
 
 autoload -U compinit promptinit
@@ -78,14 +119,12 @@ setopt autocd
 
 
 
-alias ls='ls --color=auto'
+alias ls='ls -p --color=auto'
 alias grep='grep --colour=auto'
 alias emerge='sudo emerge'
 alias -g G='|grep' 
 
 export GREP_COLOR='00;38;5;226'
-
-
 
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
