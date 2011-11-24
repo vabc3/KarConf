@@ -111,8 +111,8 @@ zstyle ':completion::complete:*' use-cache 1
 
 
 
-exec 2>>(while read line; do 
-print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
+#exec 2>>(while read line; do 
+#print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
 
 #无需cd 进目录
 setopt autocd 
