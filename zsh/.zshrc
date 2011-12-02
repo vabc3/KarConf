@@ -132,3 +132,6 @@ export GREP_COLOR='00;38;5;226'
 #bindkey "^[OF" end-of-line
 #bindkey "\e[3~" delete-char
 eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
+
+
+PATH=/sbin:$PATHi
