@@ -134,4 +134,4 @@ export GREP_COLOR='00;38;5;226'
 eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
 
 
-PATH=/sbin:$PATHi
+PATH=/sbin:$PATH
