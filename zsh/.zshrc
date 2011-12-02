@@ -126,12 +126,13 @@ alias -g G='|grep'
 
 export GREP_COLOR='00;38;5;226'
 
-#bindkey '^[[A' history-search-backward
-#bindkey '^[[B' history-search-forward
 #bindkey "^[OH" beginning-of-line
 #bindkey "^[OF" end-of-line
 #bindkey "\e[3~" delete-char
 eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
 
+#modify up down
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
 PATH=/sbin:$PATH
