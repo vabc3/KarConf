@@ -36,8 +36,8 @@ URxvt.depth: 32
 URxvt.preeditType: Root
 
 ! urxvt*font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,-wenquanyi-*-medium-r-normal--13-*-*-*-p-*-iso10646-1
-URxvt.font:xft:Monospace:size=18:style=Regular:antialias=true
-URxvt.boldFont:xft:Monospace:size=18:style=Regular:antialias=true
+URxvt.font:xft:Monospace:size=16:style=Regular:antialias=true
+URxvt.boldFont:xft:Monospace:size=16:style=Regular:antialias=true
 
 
 
