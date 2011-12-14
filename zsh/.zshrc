@@ -3,7 +3,7 @@ if [ `hostname` = 'Karata-Laptop' ]; then
 	export XSESSION="compiz-session" 
 fi
 
-##在命令前插入 sudo 
+#在命令前插入 sudo 定义快捷键为： [Esc] [Esc]
 sudo-command-line() {
 	[[ -z $BUFFER ]] && zle up-history
 	[[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
@@ -11,7 +11,6 @@ sudo-command-line() {
 }
 zle -N sudo-command-line
 
-#定义快捷键为： [Esc] [Esc]
 bindkey "\e\e" sudo-command-line
 
 
@@ -51,7 +50,6 @@ unsetopt equals
 #FINISH="%{$terminfo[sgr0]%}"
 #}}}
 
-
 TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
 
 recolor-cmd() {
@@ -87,7 +85,7 @@ check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 
 
 
-
+#历史记录
 # number of lines kept in history
 export HISTSIZE=1000000
 # number of lines saved in the history after logout
@@ -105,6 +103,7 @@ promptinit; prompt gentoo
 
 zstyle ':completion::complete:*' use-cache 1
 
+#错误提示颜色
 #exec 2>>(while read line; do 
 #print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
 
@@ -118,6 +117,7 @@ alias emerge='sudo emerge'
 alias -g G='|grep' 
 alias -g H='|head'
 
+#Grep命令颜色
 export GREP_COLOR='00;38;5;226'
 
 #bindkey "^[OH" beginning-of-line
@@ -129,4 +129,8 @@ eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
-#PATH=/sbin:$PATH
+hbsb() {
+	zle up-history
+}
+zle -N hbsb
+#bindkey ']' hbsb
