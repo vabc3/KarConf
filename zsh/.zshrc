@@ -116,6 +116,7 @@ alias grep='grep --colour=auto'
 alias emerge='sudo emerge'
 alias -g G='|grep' 
 alias -g H='|head'
+alias -g service='sudo service'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
