@@ -97,6 +97,7 @@ setopt inc_append_history
 setopt EXTENDED_HISTORY
 
 #提示符
+autoload -U promptinit
 promptinit; prompt gentoo
 
 #错误提示颜色
