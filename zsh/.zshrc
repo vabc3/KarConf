@@ -1,7 +1,7 @@
 #定义Xsession
-if [ `hostname` = 'Karata-Laptop' ]; then
-	export XSESSION="compiz-session" 
-fi
+#if [ `hostname` = 'Karata-Laptop' ]; then
+#	export XSESSION="compiz-session" 
+#fi
 
 #在命令前插入 sudo 定义快捷键为： [Esc] [Esc]
 sudo-command-line() {
@@ -96,12 +96,8 @@ export HISTFILE=~/.zhistory
 setopt inc_append_history
 setopt EXTENDED_HISTORY
 
-
-autoload -U compinit promptinit
-compinit
+#提示符
 promptinit; prompt gentoo
-
-zstyle ':completion::complete:*' use-cache 1
 
 #错误提示颜色
 #exec 2>>(while read line; do 
@@ -114,9 +110,11 @@ alias ls='ls -p --color=auto'
 alias ll='ls -al'
 alias grep='grep --colour=auto'
 alias emerge='sudo emerge'
+alias -g service='sudo service'
 alias -g G='|grep' 
 alias -g H='|head'
-alias -g service='sudo service'
+alias -g W='|wc -l'
+alias -g L='|less'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
@@ -130,8 +128,73 @@ eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
-hbsb() {
-	zle up-history
-}
-zle -N hbsb
+#hbsb() {
+#	zle up-history
+#}
+#zle -N hbsb
 #bindkey ']' hbsb
+#
+
+
+#自动补全功能
+#setopt AUTO_LIST
+#setopt AUTO_MENU
+#开启此选项，补全时会直接选中菜单项
+#setopt MENU_COMPLETE
+
+autoload -U compinit
+compinit
+
+#自动补全缓存
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path .zcache
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+#自动补全选项
+zstyle ':completion:*:match:*' original only
+zstyle ':completion::prefix-1:*' completer _complete
+zstyle ':completion:predict:*' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
+zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
+
+#路径补全
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-shlashes 'yes'
+zstyle ':completion::complete:*' '\\'
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:default' force-list always
+
+#彩色补全菜单 
+##eval $(dircolors -b) 
+##export ZLSCOLORS="${LS_COLORS}"
+zmodload zsh/complist
+##zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+##zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) 
+#([0-9]#)*=0=01;31'
+
+#错误校正      
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+#kill 命令补全      
+compdef pkill=kill
+compdef pkill=killall
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:processes' command 'ps -au$USER'
+
+#补全类型提示分组 
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+##zstyle ':completion:*:descriptions' format $'\e[01;33m -- %d --\e[0m'
+##zstyle ':completion:*:messages' format $'\e[01;35m -- %d --\e[0m'
+##zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found --\e[0m'
+
+zstyle ':completion:*:descriptions' format $'%{\e[01;33m%} -- %d --%{\e[0m%}'
+zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
+zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
+
