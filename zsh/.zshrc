@@ -32,9 +32,6 @@ bindkey "\t" user-complete
 #路径别名
 hash -d kc="/home/rquiss/git/KarConf"
 
-#错误修正
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
 #启用等号
 unsetopt equals
 
@@ -111,7 +108,12 @@ alias ls='ls -p --color=auto'
 alias ll='ls -al'
 alias grep='grep --colour=auto'
 alias emerge='sudo emerge'
-alias -g service='sudo service'
+alias -g e='emerge -av'
+alias -g eu='emerge --sync'
+alias -g eavc='emerge -avc'
+alias -g ew='emerge -avuND world'
+alias -g etcu='sudo etc-update'
+alias -g srv='sudo service'
 alias -g G='|grep' 
 alias -g H='|head'
 alias -g W='|wc -l'
