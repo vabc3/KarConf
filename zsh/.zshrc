@@ -118,6 +118,9 @@ alias -g G='|grep'
 alias -g H='|head'
 alias -g W='|wc -l'
 alias -g L='|less'
+alias -g m='make'
+alias -g mc='make clean'
+alias -g mt='make test'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'

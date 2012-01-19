@@ -1,5 +1,5 @@
 !Urxvt 配置
-URxvt.geometry: 88x32+256+64
+URxvt.geometry: 105x40+256+64
 URxvt.visualBell: False
 urxvt*inheritPixmap: true
 URxvt.tintColor: white
@@ -10,12 +10,12 @@ urxvt*cursorBlink: true
 URxvt.cursorUnderline:True
 urxvt*scrollBar: false
 urxvt*saveLines: 65535
-! urxvt*borderLess: true   
+!urxvt*borderLess: true   
 urxvt*colorBD: white
 urxvt*colorIT: green
 URxvt*transparent: true
-URxvt.background: rgba:0000/0000/1001/eeee
-URxvt.foreground: gray85
+URxvt.background: rgba:0000/0000/0051/eeee
+URxvt.foreground: gray84
 URxvt.cursorColor: orange
 URxvt.color0: #000000
 URxvt.color1: #800000
