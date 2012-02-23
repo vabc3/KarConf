@@ -1,0 +1,73 @@
+#!/usr/bin/env bash 
+# 
+# Wrapper to all scripts in /etc/init.d. with 
+# Eventually will manage runlevels aswell. 
+
+# Environment Variables. 
+INIT="/etc/init.d" 
+RUNSCRIPT="/sbin/runscript" 
+RCSTATUS="/bin/rc-status" 
+RCUPDATE="/sbin/rc-update" 
+
+# first check to see if we are root. 
+USERID=`id | awk '{print $1}'` 
+if [ "${USERID}" != "uid=0(root)" ]; then 
+echo "You must be root to run this script" 
+exit 1 
+fi 
+# Usage, how to use this script. 
+usage () { 
+	echo "Usage:" 
+		echo "`basename $0` PROGRAM { start|stop|restart|pause|zap|status|ineed|iuse|needsme|usesme|broken|runlevel }" 
+		echo "`basename $0` status-all     to show a status of all running services." 
+		echo "`basename $0` show-runlevel  to show what runlevel all services are installed in." 
+		echo "`basename $0` add PROGRAM default   to install a program into runlevel default." 
+		echo "`basename $0` del PROGRAM default   to remove a program from runlevel default." 
+		exit 2 
+} 
+# wrapper for '/bin/rc-status' 
+statusall () { 
+	${RCSTATUS} 
+	exit 0 
+} 
+# wrapper for '/sbin/rc-update show' 
+showrunlevel () { 
+	${RCUPDATE} show 
+		exit 0 
+} 
+# wrapper for '/bin/rc-status' continued 
+if [ "$1" = "status-all" ]; then 
+statusall 
+exit 0 
+# wrapper for '/sbin/rc-update show' continued 
+elif [ "$1" = "show-runlevel" ]; then 
+showrunlevel 
+exit 0 
+fi 
+# Add or delete services from runlevels. 
+if [ "$1" = "add" ]; then 
+${RCUPDATE} $1 $2 $3 
+exit 0 
+elif [ "$1" = "del" ]; then 
+${RCUPDATE} $1 $2 $3 
+exit 0 
+fi 
+# Show the runlevel of the current service. 
+if [ "$2" = "runlevel" ]; then 
+showrunlevel | grep $1 
+exit 0 
+fi 
+# Catch all, if no args given show usage. 
+if [ "$1" = "" ]; then 
+usage 
+fi 
+# The actual service part. Thanks to riceboy50 :) 
+if [ -x "${INIT}/$1" ]; then 
+${RUNSCRIPT} ${INIT}/$1 $2 
+exit 0 
+else 
+echo "${INIT}/$1 not found!" 
+echo 
+usage 
+fi 
+# EOF 
