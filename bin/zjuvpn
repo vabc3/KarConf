@@ -1,0 +1,47 @@
+#!/sbin/runscript
+
+ROUTE=/sbin/route
+IFCONFIG=/sbin/ifconfig
+DGW=10.110.29.1
+
+depend(){
+		need xl2tpd
+}
+
+start(){
+
+#	/etc/init.d/xl2tpd restart >/dev/null
+
+	ebegin "启动ZJU_VPN"
+	while  ! [ -a /var/run/xl2tpd/l2tp-control ]; do
+			sleep 1
+	done
+	
+
+	chown rquiss /var/run/xl2tpd/l2tp-control
+
+	echo 'c ZJU_VPN' > /var/run/xl2tpd/l2tp-control
+
+	while ! $IFCONFIG|grep -q ppp 2>/dev/null; do
+		sleep 1
+	done
+
+	export VPN_SRV=`sed -n 's/lns=\(.*\)/\1/p' /etc/xl2tpd/xl2tpd.conf`
+	export DEF_GW=`$ROUTE -n|awk '/^0\.0\.0\.0/ {print $2}'`
+	export VPN_GW=`$IFCONFIG |sed -n '/ppp0/{n;s/.*inet \([0-9.]*\).*/\1/g;p;}'`
+	$ROUTE del -net default gw $DEF_GW
+	$ROUTE add -net default gw $VPN_GW metric 1 dev ppp0
+	
+	eend $?
+}
+
+stop(){
+	ebegin "断开ZJU虚拟专用网"
+	export VPN_GW=`$IFCONFIG |sed -n '/ppp0/{n;s/.*inet \([0-9.]*\).*/\1/g;p;}'`
+	$ROUTE del -net default gw $VPN_GW && \
+	$ROUTE add -net default gw $DGW
+
+	echo 'd ZJU_VPN' > /var/run/xl2tpd/l2tp-control
+	eend $?
+}
+
