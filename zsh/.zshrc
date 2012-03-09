@@ -34,6 +34,8 @@ hash -d kc="/home/rquiss/git/KarConf"
 
 #启用等号
 unsetopt equals
+#退出进程后不取消掉
+setopt NO_HUP
 
 #color{{{
 #autoload colors
@@ -90,6 +92,7 @@ export SAVEHIST=300000
 # location of history
 export HISTFILE=~/.zhistory
 # append command to history file once executed
+export TERM=linux
 setopt inc_append_history
 setopt EXTENDED_HISTORY
 

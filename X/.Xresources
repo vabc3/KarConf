@@ -1,5 +1,5 @@
 !Urxvt 配置
-URxvt.geometry: 80x32+256+64
+URxvt.geometry: 81x32+256+64
 URxvt.visualBell: False
 urxvt*inheritPixmap: true
 URxvt.tintColor: white
