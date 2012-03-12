@@ -92,7 +92,6 @@ export SAVEHIST=300000
 # location of history
 export HISTFILE=~/.zhistory
 # append command to history file once executed
-export TERM=linux
 setopt inc_append_history
 setopt EXTENDED_HISTORY
 
@@ -206,3 +205,4 @@ zstyle ':completion:*:descriptions' format $'%{\e[01;33m%} -- %d --%{\e[0m%}'
 zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
 
+#export TERM=linux
