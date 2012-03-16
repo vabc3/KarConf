@@ -51,3 +51,21 @@ URxvt.scrollTtyOutput:False
 URxvt.scrollTtyKeypress:True
 URxvt.scrollWithBuffer:True
 URxvt.iconFile:/home/rquiss/git/KarConf/X/xterm.svg
+
+URxvt.keysym.M-Up:      \033[1;3A
+URxvt.keysym.M-Down:    \033[1;3B
+URxvt.keysym.M-Right:   \033[1;3C
+URxvt.keysym.M-Left:    \033[1;3D
+URxvt.keysym.M-Prior:   \033[5;3~
+URxvt.keysym.M-Next:    \033[6;3~
+URxvt.keysym.M-End:     \033[1;3F
+URxvt.keysym.M-Home:    \033[1;3H
+
+URxvt.keysym.C-Up:      \033[1;5A
+URxvt.keysym.C-Down:    \033[1;5B
+URxvt.keysym.C-Right:   \033[1;5C
+URxvt.keysym.C-Left:    \033[1;5D
+URxvt.keysym.C-Prior:   \033[5;5~
+URxvt.keysym.C-Next:    \033[6;5~
+URxvt.keysym.C-End:     \033[1;5F
+URxvt.keysym.C-Home:    \033[1;5H
