@@ -206,3 +206,5 @@ zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
 
 export TERM=rxvt-unicode
+
+export PS1="%B%F{green}%n@%M%k %B%F{blue}%1~ %# %b%f%k"
