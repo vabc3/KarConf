@@ -1,0 +1,20 @@
+"~/sh/voll -"
+XF86AudioLowerVolume
+
+"~/sh/voll +"
+XF86AudioRaiseVolume
+
+"~/sh/voll m"
+XF86AudioMute
+
+"urxvt"
+Mod4 + r
+
+"google-chrome"
+Mod4 + w
+
+"nautilus --no-desktop"
+Mod4 + t
+
+"dmenu_run"
+Mod4 + x

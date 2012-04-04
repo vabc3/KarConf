@@ -95,9 +95,9 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-set t_Co=256
+"set t_Co=256
 "colorscheme beauty256
-colorscheme desert
+"colorscheme desert
 set tabstop=4
 set shiftwidth=4
 

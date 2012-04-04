@@ -1,0 +1,6 @@
+bind off Mod4+r
+bind off Mod4+w
+bind off Mod4+t
+bind off Mod4+x
+bind on Mod4+Shift+r remove
+bind on Mod4+Tab switch window
