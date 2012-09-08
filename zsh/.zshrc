@@ -114,7 +114,13 @@ alias -g eu='emerge --sync'
 alias -g eavc='emerge -avc'
 alias -g ew='emerge -avuND world'
 alias -g etcu='sudo etc-update'
-alias -g srv='sudo service'
+
+if [ $(hostname) == 'Karata-Laptop' ]; then
+	alias -g srv='sudo service';
+else 
+	alias -g srv='sudo rc.d';
+fi
+
 alias -g G='|grep' 
 alias -g H='|head'
 alias -g W='|wc -l'
@@ -210,7 +216,7 @@ zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 #export TERM=rxvt-unicode
 export TERM=rxvt
 if [ $UID != 0 ]; then
-	export PS1="%B%F{yellow}%n%F{red}@%F{green}%M%k %B%F{blue}%1~ %# %b%f%k";
+	export PS1="%B%F{red}%n%F{yellow}@%F{green}%M%k %B%F{blue}%1~ %# %b%f%k";
 fi
 #for nmon
 unset COLORFGBG   
