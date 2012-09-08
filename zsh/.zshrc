@@ -122,6 +122,8 @@ alias -g L='|less'
 alias -g m='make'
 alias -g mc='make clean'
 alias -g mt='make test'
+alias -g pa='sudo pacman'
+alias -g vi='vim'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
@@ -206,6 +208,7 @@ zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 #zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
 
 #export TERM=rxvt-unicode
+export TERM=rxvt
 if [ $UID != 0 ]; then
 	export PS1="%B%F{yellow}%n%F{red}@%F{green}%M%k %B%F{blue}%1 ~ %# %b%f%k";
 fi
