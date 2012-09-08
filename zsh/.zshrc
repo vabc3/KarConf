@@ -79,8 +79,8 @@ recolor-cmd() {
 check-cmd-self-insert() { zle .self-insert && recolor-cmd }
 check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 
-#zle -N self-insert check-cmd-self-insert
-#zle -N backward-delete-char check-cmd-backward-delete-char
+zle -N self-insert check-cmd-self-insert
+zle -N backward-delete-char check-cmd-backward-delete-char
 
 
 
@@ -206,6 +206,12 @@ zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 #zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
 
 #export TERM=rxvt-unicode
+if [ $UID != 0 ]; then
+	export PS1="%B%F{yellow}%n%F{red}@%F{green}%M%k %B%F{blue}%1 ~ %# %b%f%k";
+fi
+#for nmon
+unset COLORFGBG   
 
-export PS1="%B%F{green}%n@%M%k %B%F{blue}%1~ %# %b%f%k"
-unset COLORFGBG   //for nmon
+#disable ^S
+#stty stop ''
+stty -ixon

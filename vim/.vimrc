@@ -118,3 +118,19 @@ set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
 
 nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
+
+map <C-s> :w<cr>
+map! <C-s> <Esc>:w<cr>
+
+map <C-q> :q!<cr>
+map! <C-q> <C-c>:q!<cr>
+map <C-w> :wq<cr>
+map! <C-w> <C-c>:wq<cr>
+
+map <C-e> \x 
+map! <C-e> \x 
+map <A-/> \x 
+map <M-/> \x 
+
+
+
