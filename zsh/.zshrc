@@ -210,7 +210,7 @@ zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 #export TERM=rxvt-unicode
 export TERM=rxvt
 if [ $UID != 0 ]; then
-	export PS1="%B%F{yellow}%n%F{red}@%F{green}%M%k %B%F{blue}%1 ~ %# %b%f%k";
+	export PS1="%B%F{yellow}%n%F{red}@%F{green}%M%k %B%F{blue}%1~ %# %b%f%k";
 fi
 #for nmon
 unset COLORFGBG   
