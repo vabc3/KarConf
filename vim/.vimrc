@@ -1,3 +1,9 @@
+" part of ~/.vimrc
+" " highlight tabs and trailing spaces
+set listchars=tab:>-,trail:-
+set list
+
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -97,7 +103,7 @@ endif
 
 "set t_Co=256
 "colorscheme beauty256
-"colorscheme desert
+colorscheme desert
 set tabstop=4
 set shiftwidth=4
 
@@ -134,3 +140,4 @@ map <M-/> \x
 
 
 
+set whichwrap+=<,>

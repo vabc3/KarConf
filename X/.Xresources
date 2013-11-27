@@ -1,11 +1,15 @@
+!URxvt.depth: 32
+!URxvt*transparent: false
+!URxvt.background: rgba:0000/0000/0051/eeee
+Xft.dpi :160
 !Urxvt 配置
-URxvt.geometry: 81x32+256+64
+URxvt.geometry: 100x45+256+64
 URxvt.visualBell: False
 urxvt*inheritPixmap: true
 URxvt.tintColor: white
 URxvt.shading: 80
 urxvt*fading: 80
-urxvt*title:Rquiss Rxvt-Unicode
+URxvt.title:Rquiss Rxvt-Unicode7
 urxvt*cursorBlink: true
 URxvt.cursorUnderline:True
 urxvt*scrollBar: false
@@ -13,8 +17,6 @@ urxvt*saveLines: 65535
 !urxvt*borderLess: true   
 urxvt*colorBD: white
 urxvt*colorIT: green
-URxvt*transparent: true
-URxvt.background: rgba:0000/0000/0051/eeee
 URxvt.foreground: gray84
 URxvt.cursorColor: orange
 URxvt.color0: #000000
@@ -37,12 +39,11 @@ URxvt.color14: #c0d8f8
 URxvt.color15: #e0e0e0
 !URxvt.colorUL: #213a5e
 
-URxvt.depth: 32
 URxvt.preeditType: Root
 
 ! urxvt*font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1,-wenquanyi-*-medium-r-normal--13-*-*-*-p-*-iso10646-1
-URxvt*font:xft:Monospace:size=11:style=Regular:antialias=true,xft:Yahei Mono:size=11:style=Regular:antialias=true
-URxvt*boldFont:xft:Monospace:size=11:style=Regular:antialias=true,xft:Yahei Mono:size=11:style=Regular:antialias=true
+URxvt*font:xft:Monospace:size=17:style=Regular:antialias=true,xft:Yahei Mono:size=17:style=Regular:antialias=true
+URxvt*boldFont:xft:Monospace:size=17:style=Regular:antialias=true,xft:Yahei Mono:size=17:style=Regular:antialias=true
 !URxvt.font:xft:楷体:size=11:style=Regular:antialias=true
 !URxvt.boldFont:xft:Monospace:size=11:style=Regular:antialias=true
 
@@ -50,7 +51,7 @@ URxvt.mouseWheelScrollPage:True
 URxvt.scrollTtyOutput:False
 URxvt.scrollTtyKeypress:True
 URxvt.scrollWithBuffer:True
-URxvt.iconFile:/home/rquiss/git/KarConf/X/xterm.svg
+URxvt*iconFile:/home/rquiss/git/KarConf/X/xterm.svg
 
 URxvt.keysym.M-Up:      \033[1;3A
 URxvt.keysym.M-Down:    \033[1;3B

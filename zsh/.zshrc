@@ -115,7 +115,7 @@ alias -g eavc='emerge -avc'
 alias -g ew='emerge -avuND world'
 alias -g etcu='sudo etc-update'
 
-if [ $(hostname) == 'Karata-Laptop' ]; then
+if [ -e '/etc/gentoo-release' ]; then
 	alias -g srv='sudo service';
 else 
 	alias -g srv='sudo rc.d';
@@ -130,6 +130,10 @@ alias -g mc='make clean'
 alias -g mt='make test'
 alias -g pa='sudo pacman'
 alias -g vi='vim'
+alias -g star='xdg-open'
+alias -g vima='sudo vi /etc/make.conf'
+alias -g vius='sudo vi /etc/portage/package.use'
+alias -g psg='ps aux G'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
@@ -224,3 +228,7 @@ unset COLORFGBG
 #disable ^S
 #stty stop ''
 stty -ixon
+
+PATH="/usr/sbin:/sbin:${PATH}"
+
+

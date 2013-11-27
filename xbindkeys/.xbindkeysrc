@@ -10,11 +10,14 @@ XF86AudioMute
 "urxvt"
 Mod4 + r
 
-"google-chrome"
+"google-chrome-beta"
 Mod4 + w
 
-"nautilus --no-desktop"
+"pcmanfm"
 Mod4 + t
+
+"nautilus --no-desktop"
+Mod4 + y
 
 "dmenu_run"
 Mod4 + x
