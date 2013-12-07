@@ -1,6 +1,8 @@
 #!/bin/sh
 command=compiz-manager
 
+# /usr/local/bin/SwitchLAltSuper
+
 userbindkey=$HOME/.xbindkeysrc
 
 if [ -f "$userbindkey" ]; then
@@ -11,12 +13,6 @@ userresources=$HOME/.Xresources
 
 if [ -f "$userresources" ]; then
   xrdb -merge "$userresources"
-fi
-
-usermodmap=$HOME/.xmodmap
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
 fi
 
 

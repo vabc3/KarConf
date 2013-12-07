@@ -31,6 +31,7 @@ bindkey "\t" user-complete
 
 #路径别名
 hash -d kc="/home/rquiss/git/KarConf"
+hash -d me="/run/media/rquiss"
 
 #启用等号
 unsetopt equals
@@ -110,8 +111,10 @@ alias ls='ls -p --color=auto'
 alias ll='ls -al'
 alias grep='grep --colour=auto'
 alias emerge='sudo emerge'
-alias -g eu='emerge --sync'
-alias -g eavc='emerge -avc'
+alias -g es='emerge --sync'
+alias -g eac='emerge -avc'
+alias -g ea='emerge -av'
+alias -g e1='emerge -av1'
 alias -g ew='emerge -avuND world'
 alias -g etcu='sudo etc-update'
 

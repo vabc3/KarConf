@@ -2,7 +2,7 @@
 
 !URxvt backgroud transparent
 URxvt.depth: 32
-URxvt.background: rgba:0000/0000/0088/aaaa
+URxvt.background: rgba:0000/0000/0088/bbbb
 URxvt.title:SHANG
 
 !ICON
@@ -69,4 +69,4 @@ URxvt.keysym.C-End:     \033[1;5F
 URxvt.keysym.C-Home:    \033[1;5H
 
 ! XFT
-Xft.dpi :160
+Xft.dpi :96
