@@ -1,8 +1,6 @@
-clear mod1
-clear mod4
 remove mod1 = Alt_L
 remove mod4 = Super_L
-keysym Alt_L = Super_L
-keysym Super_L = Alt_L
+keycode 64 = Super_L
+keycode 133 = Alt_L
 add mod1 = Alt_L
 add mod4 = Super_L

@@ -10,7 +10,10 @@ XF86AudioMute
 "urxvt"
 Mod4 + r
 
-"google-chrome-beta"
+"xterm"
+Mod4 + q
+
+"google-chrome-stable"
 Mod4 + w
 
 "pcmanfm"
@@ -21,3 +24,6 @@ Mod4 + y
 
 "dmenu_run"
 Mod4 + x
+
+"xterm"
+Mod4 + v

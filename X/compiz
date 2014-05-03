@@ -1,8 +1,6 @@
 #!/bin/sh
 command=compiz-manager
 
-# /usr/local/bin/SwitchLAltSuper
-
 userbindkey=$HOME/.xbindkeysrc
 
 if [ -f "$userbindkey" ]; then
@@ -15,11 +13,13 @@ if [ -f "$userresources" ]; then
   xrdb -merge "$userresources"
 fi
 
+#/usr/local/bin/SwitchLAltSuper
+
+#xmodmap $HOME/.xmodmap
 
 tint2 &
 fcitx-autostart &
-/usr/libexec/lxpolkit &
-
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 exec $command
 
