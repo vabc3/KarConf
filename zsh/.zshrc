@@ -233,5 +233,4 @@ unset COLORFGBG
 stty -ixon
 
 PATH="/usr/sbin:/sbin:${PATH}"
-
-
+PATH=~/.nodejs/bin:$PATH
