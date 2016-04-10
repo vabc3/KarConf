@@ -1,4 +1,10 @@
 !Urxvt Configuration
+URxvt.perl-lib: /home/rquiss/git/urxvt-perls
+
+URxvt.perl-ext-common: clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 !URxvt backgroud transparent
 URxvt.depth: 32
@@ -7,17 +13,20 @@ URxvt.title:SHANG
 
 !ICON
 URxvt*iconFile:/home/rquiss/git/KarConf/X/xterm.svg
-URxvt*geometry: 100x31+256+64
+URxvt*geometry: 110x33+256+64
 urxvt*fading: 10
 !Font
-URxvt*font:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
-URxvt*boldFont:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
+!URxvt*font:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
+!URxvt*font:xft:Terminess1:size=19:style=Regular:antialias=true
+URxvt*font:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
+URxvt*blodFont:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
+!URxvt*boldFont:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
 
 urxvt*cursorBlink: true
 URxvt.cursorUnderline:True
 urxvt*scrollBar: false
 urxvt*saveLines: 65535
-urxvt*borderLess: true
+!urxvt*borderLess: true
 urxvt*colorBD: white
 urxvt*colorIT: green
 URxvt.foreground: gray84
