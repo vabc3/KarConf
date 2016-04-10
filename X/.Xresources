@@ -1,20 +1,5 @@
 !Urxvt Configuration
-URxvt.perl-lib: /home/rquiss/git/urxvt-perls
 
-URxvt.perl-ext-common: clipboard
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-
-!URxvt backgroud transparent
-URxvt.depth: 32
-URxvt.background: rgba:0000/0000/0088/cccc
-URxvt.title:SHANG
-
-!ICON
-URxvt*iconFile:/home/rquiss/git/KarConf/X/xterm.svg
-URxvt*geometry: 110x33+256+64
-urxvt*fading: 10
 !Font
 !URxvt*font:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
 !URxvt*font:xft:Terminess1:size=19:style=Regular:antialias=true
@@ -22,60 +7,37 @@ URxvt*font:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=tru
 URxvt*blodFont:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
 !URxvt*boldFont:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
 
-urxvt*cursorBlink: true
+!COLOR
+URxvt.color10: #60f080
+URxvt.color12: DodgerBlue
+URxvt.depth: 32
+URxvt.background: rgba:0000/0000/0088/cccc
+!urxvt*colorBD: white
+!urxvt*colorIT: green
+URxvt.foreground: gray84
+URxvt.cursorColor: orange
+
+!Perl
+URxvt.perl-lib: /home/rquiss/git/urxvt-perls
+URxvt.perl-ext-common: clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+!Shape
+URxvt.title:SHANG
+URxvt*geometry: 110x33+256+64
+!urxvt*cursorBlink: true
 URxvt.cursorUnderline:True
 urxvt*scrollBar: false
 urxvt*saveLines: 65535
 !urxvt*borderLess: true
-urxvt*colorBD: white
-urxvt*colorIT: green
-URxvt.foreground: gray84
-URxvt.cursorColor: orange
 URxvt.preeditType: Root
 URxvt.mouseWheelScrollPage:True
 URxvt.scrollTtyOutput:False
 URxvt.scrollTtyKeypress:True
 URxvt.scrollWithBuffer:True
 
-!COLOR
-URxvt.color0: #000000
-URxvt.color1: #800000
-URxvt.color2: #008000
-URxvt.color3: #d0d090
-!URxvt.color4: #000080
-URxvt.color4: Blue
-URxvt.color5: #800080
-URxvt.color6: #d0d0d0
-URxvt.color7: #b0b0b0
-URxvt.color8: #f08060
-URxvt.color9: #f08060
-URxvt.color10: #60f080
-URxvt.color11: #e0c060
-!URxvt.color12: #80c0e0
-URxvt.color12: DodgerBlue
-URxvt.color13: #f0c0f0
-URxvt.color14: #c0d8f8
-URxvt.color15: #e0e0e0
-!URxvt.colorUL: #213a5e
+!ICON
+URxvt*iconFile:/home/rquiss/git/KarConf/X/xterm.svg
 
-
-!KEY
-URxvt.keysym.M-Up:      \033[1;3A
-URxvt.keysym.M-Down:    \033[1;3B
-URxvt.keysym.M-Right:   \033[1;3C
-URxvt.keysym.M-Left:    \033[1;3D
-URxvt.keysym.M-Prior:   \033[5;3~
-URxvt.keysym.M-Next:    \033[6;3~
-URxvt.keysym.M-End:     \033[1;3F
-URxvt.keysym.M-Home:    \033[1;3H
-URxvt.keysym.C-Up:      \033[1;5A
-URxvt.keysym.C-Down:    \033[1;5B
-URxvt.keysym.C-Right:   \033[1;5C
-URxvt.keysym.C-Left:    \033[1;5D
-URxvt.keysym.C-Prior:   \033[5;5~	
-URxvt.keysym.C-Next:    \033[6;5~
-URxvt.keysym.C-End:     \033[1;5F
-URxvt.keysym.C-Home:    \033[1;5H
-
-! XFT
-! Xft.dpi : 220
