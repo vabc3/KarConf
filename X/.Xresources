@@ -1,14 +1,18 @@
 !Urxvt Configuration
 
 !Font
-!URxvt*font:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
-!URxvt*font:xft:Terminess1:size=19:style=Regular:antialias=true
-URxvt*font:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
-URxvt*blodFont:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
+!URxvt*font:xft:xft:karterm:size=19:style=Regular:antialias=true
+URxvt*font:xft:Terminess Powerline:size=25:style=Regular:antialias=true
+!URxvt*font:xft:xft:Yahei Mono:size=19:style=Regular:antialias=true
+!URxvt*font:xft:Monospace:size=19:style=Regular:antialias=true
+!URxvt*blodFont:xft:Source Code Pro for Powerline:size=19:style=Regular:antialias=true
 !URxvt*boldFont:xft:Monospace:size=19:style=Regular:antialias=true,xft:Yahei Mono:size=19:style=Regular:antialias=true
 
 !COLOR
+!URxvt.color4: DodgerBlue
+URxvt.color9: #f08060
 URxvt.color10: #60f080
+URxvt.color11: #e0c060
 URxvt.color12: DodgerBlue
 URxvt.depth: 32
 URxvt.background: rgba:0000/0000/0088/cccc
@@ -25,6 +29,7 @@ URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 !Shape
+!URxvt.letterSpace: -1
 URxvt.title:SHANG
 URxvt*geometry: 110x33+256+64
 !urxvt*cursorBlink: true

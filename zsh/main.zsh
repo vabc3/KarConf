@@ -1,8 +1,3 @@
-#定义Xsession
-#if [ `hostname` = 'Karata-Laptop' ]; then
-#	export XSESSION="compiz-session" 
-#fi
-
 #在命令前插入 sudo 定义快捷键为： [Esc] [Esc]
 sudo-command-line() {
 	[[ -z $BUFFER ]] && zle up-history
@@ -27,8 +22,6 @@ user-complete(){
 zle -N user-complete
 bindkey "\t" user-complete
 
-
-
 #路径别名
 hash -d kc="/home/rquiss/git/KarConf"
 hash -d me="/run/media/rquiss"
@@ -37,53 +30,6 @@ hash -d me="/run/media/rquiss"
 unsetopt equals
 #退出进程后不取消掉
 setopt NO_HUP
-
-#color{{{
-#autoload colors
-#colors
-
-#for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-#eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-#eval $color='%{$fg[${(L)color}]%}'
-#(( count = $count + 1 ))
-#done
-#FINISH="%{$terminfo[sgr0]%}"
-#}}}
-
-TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
-
-recolor-cmd() {
-	region_highlight=()
-	colorize=true
-	start_pos=0
-	for arg in ${(z)BUFFER}; do
-		((start_pos+=${#BUFFER[$start_pos+1,-1]}-${#${BUFFER[$start_pos+1,-1]###}}))
-		((end_pos=$start_pos+${#arg}))
-		if $colorize; then
-			colorize=false
-			res=$(LC_ALL=C builtin type $arg 2>/dev/null)
-			case $res in
-				*'reserved word'*)   style="fg=red,bold";;
-			*'alias for'*)       style="fg=cyan,bold";;
-		*'shell builtin'*)   style="fg=yellow,bold";;
-	*'shell function'*)  style='fg=green,bold';;
-*"$arg is"*)         [[ $arg = 'sudo' ]] && style="fg=red,bold" || style="fg=magenta,bold";;
-*)                   style='none';;
-			esac
-			region_highlight+=("$start_pos $end_pos $style")
-		fi
-		[[ ${${TOKENS_FOLLOWED_BY_COMMANDS[(r)${arg//|/\|}]}:+yes} = 'yes' ]] && colorize=true
-		start_pos=$end_pos
-	done
-}
-
-check-cmd-self-insert() { zle .self-insert && recolor-cmd }
-check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
-
-zle -N self-insert check-cmd-self-insert
-zle -N backward-delete-char check-cmd-backward-delete-char
-
-
 
 #历史记录
 # number of lines kept in history
@@ -106,37 +52,6 @@ promptinit; prompt gentoo
 
 #无需cd 进目录
 setopt autocd 
-
-alias ls='ls -p --color=auto'
-alias ll='ls -al'
-alias grep='grep --colour=auto'
-alias emerge='sudo emerge'
-alias -g es='emerge --sync'
-alias -g eac='emerge -avc'
-alias -g ea='emerge -av'
-alias -g e1='emerge -av1'
-alias -g ew='emerge -avuND world'
-alias -g etcu='sudo etc-update'
-
-if [ -e '/etc/gentoo-release' ]; then
-	alias -g srv='sudo service';
-else 
-	alias -g srv='sudo rc.d';
-fi
-
-alias -g G='|grep' 
-alias -g H='|head'
-alias -g W='|wc -l'
-alias -g L='|less'
-alias -g m='make'
-alias -g mc='make clean'
-alias -g mt='make test'
-alias -g pa='fakeroot pacman'
-alias -g vi='vim'
-alias -g s='xdg-open'
-alias -g vima='sudo vi /etc/make.conf'
-alias -g vius='sudo vi /etc/portage/package.use'
-alias -g psg='ps aux G'
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
@@ -220,8 +135,6 @@ zstyle ':completion:*:descriptions' format $'%{\e[01;33m%} -- %d --%{\e[0m%}'
 zstyle ':completion:*:messages' format $'%{\e[01;35m%}-- %d --%{\e[0m%}'
 #zstyle ':completion:*:warnings' format $'%{\e[01;31m%}-- No Matches Found --%{\e[0m%}'
 
-#export TERM=rxvt-unicode
-export TERM=rxvt
 if [ $UID != 0 ]; then
 	export PS1="%F{green}%B%n%F{yellow}@%F{green}%M%k %B%F{blue}%1~ %# %b%f%k";
 fi
@@ -234,3 +147,8 @@ stty -ixon
 
 PATH="/usr/sbin:/sbin:${PATH}"
 PATH=~/.nodejs/bin:$PATH
+
+if [ $TERM = 'rxvt-unicode-256color' ]; then
+	ZSH_THEME="kar"
+	TERM=rxvt-unicode
+fi
