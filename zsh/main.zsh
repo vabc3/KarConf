@@ -146,9 +146,11 @@ unset COLORFGBG
 stty -ixon
 
 PATH="/usr/sbin:/sbin:${PATH}"
-PATH=~/.nodejs/bin:$PATH
+PATH=/opt/nodejs/bin:~/.nodejs/node_modules/.bin:$PATH
+PATH=~/sh:$PATH
 
 if [ $TERM = 'rxvt-unicode-256color' ]; then
 	ZSH_THEME="kar"
 	TERM=rxvt-unicode
 fi
+
