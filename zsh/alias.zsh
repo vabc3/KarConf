@@ -22,6 +22,7 @@ alias vima='sudo vi /etc/make.conf'
 alias vius='sudo vi /etc/portage/package.use'
 alias psg='ps aux G'
 alias history='history -E 0'
+alias ssh='ssh -o StrictHostKeyChecking=no'
 
 #git command
 alias gs='git status'

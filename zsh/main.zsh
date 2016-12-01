@@ -59,11 +59,11 @@ export GREP_COLOR='00;38;5;226'
 #bindkey "^[OH" beginning-of-line
 #bindkey "^[OF" end-of-line
 #bindkey "\e[3~" delete-char
-eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
+#eval "$(sed -n '/\#/d; s/^/bindkey /; s/: / /p;' /etc/inputrc)"
 
 #modify up down
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+#bindkey '^[[A' history-beginning-search-backward
+#bindkey '^[[B' history-beginning-search-forward
 
 #hbsb() {
 #	zle up-history
@@ -146,7 +146,7 @@ unset COLORFGBG
 stty -ixon
 
 PATH="/usr/sbin:/sbin:${PATH}"
-PATH=/opt/nodejs/bin:~/.nodejs/node_modules/.bin:$PATH
+#PATH=/opt/nodejs/bin:~/.nodejs/node_modules/.bin:$PATH
 PATH=~/sh:$PATH
 
 if [ $TERM = 'rxvt-unicode-256color' ]; then
@@ -154,3 +154,6 @@ if [ $TERM = 'rxvt-unicode-256color' ]; then
 	TERM=rxvt-unicode
 fi
 
+bindkey '^[[D' backward-word
+bindkey '^[[C' forward-word
+bindkey '^H' backward-delete-word
