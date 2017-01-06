@@ -1,0 +1,8 @@
+pushd `dirname $0` > /dev/null
+CUR=`pwd`
+popd > /dev/null
+ln -sf $CUR/zshrc ~/.zshrc
+mkdir -p ~/.omz/themes
+ln -s $CUR/*.zsh ~/.omz/
+pushd ~/.omz/themes
+git clone https://github.com/bhilburn/powerlevel9k.git
