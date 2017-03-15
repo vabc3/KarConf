@@ -25,5 +25,6 @@ Mod4 + y
 "dmenu_run"
 Mod4 + x
 
-"xterm"
+#"xterm"
+"/opt/VSCode-linux-x64/code"
 Mod4 + v
