@@ -8,3 +8,6 @@ mkdir -p ~/.omz/themes
 ln -s $CUR/*.zsh ~/.omz/
 pushd ~/.omz/themes
 git clone https://github.com/bhilburn/powerlevel9k.git
+
+pushd ~/.omz
+git clone https://github.com/robbyrussell/oh-my-zsh
