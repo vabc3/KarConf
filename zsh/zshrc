@@ -21,4 +21,5 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 ZSH_CUSTOM=$HOME/.omz
-source $ZSH_CUSTOM/oh-my-zsh/oh-my-zsh.sh
+ZSH=$HOME/.omz/oh-my-zsh
+source $ZSH/oh-my-zsh.sh
