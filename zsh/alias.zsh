@@ -39,5 +39,3 @@ alias gfp='git fetch -p --all'
 alias gv='gitk --all'
 alias gm='git checkout master'
 
-
-alias b='cargo build'

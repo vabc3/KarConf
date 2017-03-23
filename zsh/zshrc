@@ -1,7 +1,7 @@
 export ZSH=$HOME/git/oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 
-ZSH_TMUX_AUTOSTART="true"
+#ZSH_TMUX_AUTOSTART="true"
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 ZSH_TMUX_AUTOQUIT="false"
 plugins=(tmux archlinux)

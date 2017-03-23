@@ -51,7 +51,7 @@ setopt EXTENDED_HISTORY
 #print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
 
 #无需cd 进目录
-setopt autocd 
+# setopt autocd 
 
 #Grep命令颜色
 export GREP_COLOR='00;38;5;226'
@@ -149,10 +149,10 @@ PATH="/usr/sbin:/sbin:${PATH}"
 #PATH=/opt/nodejs/bin:~/.nodejs/node_modules/.bin:$PATH
 PATH=~/sh:$PATH
 
-if [ $TERM = 'rxvt-unicode-256color' ]; then
-	ZSH_THEME="kar"
-	TERM=rxvt-unicode
-fi
+#if [ $TERM = 'rxvt-unicode-256color' ]; then
+#	ZSH_THEME="kar"
+#	TERM=rxvt-unicode
+#fi
 
 bindkey '^[[D' backward-word
 bindkey '^[[C' forward-word
