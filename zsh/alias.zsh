@@ -37,5 +37,6 @@ alias gmm='git commit --amend --no-edit'
 alias grh='git reset --hard'
 alias gfp='git fetch -p --all'
 alias gv='gitk --all'
-alias gm='git checkout master'
+alias gc='git checkout'
+alias gm='gc master'
 

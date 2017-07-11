@@ -1,5 +1,9 @@
+export PATH=$PATH:/home/etuser/git.kube/k8r/run:~/sh.kube
 hash -d kube=~/go1/src/k8s.io/kubernetes
 hash -d k8s.devutil=~/go1/src/karatal.visualstudio.com/k8s.test/_git/k8s.devutil
+
+hash -d k8r=~/git.kube/k8r
+hash -d spec=~/git.kube/spec
 
 alias k='kubectl'
 alias kc='k config'
@@ -16,3 +20,6 @@ alias kv='kubectl version'
 alias kcf='kubectl create -f'
 alias kep='ke pods'
 alias kdp='kd pods'
+
+alias kpl='k8r profile'
+alias kpu='k8r profile -cuse='
