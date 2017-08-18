@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+use 5.012;
+use warnings;
+use Data::Dumper;
+use Carp qw(croak);
+use File::Basename;
+use Cwd qw(getcwd);
+use File::Path qw(make_path);
+use File::Spec::Functions qw(catfile);
+
+my %cmd_mapping         = (
+    az          =>  'azure_cli2',
+    node        =>  'node',
+    npm         =>  'node',
+);
+
+my %container_mapping   = (
+    azure_cli2  => {
+        image   => 'azuresdk/azure-cli-python',
+    },
+    node        => {
+        image   => 'node:alpine',
+        user    => 'node',
+    }
+);
+
+my $cmd             = basename($0);
+my $container_name  = $cmd_mapping{$cmd} or croak("$cmd not supported.");
+my $container       = $container_mapping{$container_name};
+
+my $image           = $container->{image}   || $container_name;
+my @run_args;
+
+my $host_home     = catfile($ENV{HOME},'docker',$container_name);
+make_path($host_home);
+my $container_home  = '/root';
+my $user            = $container->{user};
+if ($user) {
+    $container_home = catfile('/home', $user);
+    push @run_args, " -u $user";
+}
+push @run_args, " -v $host_home:$container_home";
+my $container_id    = _run("docker ps -q -f 'name=$container_name'") || _run("docker run -d -i --name $container_name @run_args $image");
+
+my $dir = '~';
+my $wd = getcwd;
+if ( $wd =~ s/$host_home/$container_home/) {
+    $dir = $wd;
+}
+my $cmd_run = "sh -c 'cd $dir; $cmd @ARGV'";
+exec("docker exec -ti $container_id $cmd_run");
+
+sub _run { chomp(my $result = qx/$_[0]/); return $result; }
