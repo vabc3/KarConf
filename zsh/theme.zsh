@@ -4,5 +4,5 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-[ -n "$TMUX" ] && export TERM=screen-256color
+# [ -n "$TMUX" ] && export TERM=screen-256color
 

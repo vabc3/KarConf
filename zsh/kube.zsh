@@ -1,4 +1,4 @@
-export PATH=$PATH:/home/etuser/git.kube/k8r/run:~/sh.kube
+export PATH="$HOME/git.kube/k8r/run:$PATH"
 hash -d kube=~/go1/src/k8s.io/kubernetes
 hash -d k8s.devutil=~/go1/src/karatal.visualstudio.com/k8s.test/_git/k8s.devutil
 
