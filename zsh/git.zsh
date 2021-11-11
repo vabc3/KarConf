@@ -1,0 +1,17 @@
+
+#git command
+alias gs='git status'
+alias gd='git diff'
+alias gcx='git clean -f -d -x'
+alias gb='git branch -a'
+alias gl='git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"'
+alias gr='git reflog'
+alias ga='git add -A .'
+alias gmt='git commit -m "tmp"'
+alias gmm='git commit --amend --no-edit'
+alias grh='git reset --hard'
+alias gfp='git fetch -p --all'
+alias gv='gitk --all'
+alias gc='git checkout'
+alias gm='gc master'
+alias gfr='gfp && gm && grh master'
