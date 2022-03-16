@@ -1,8 +1,13 @@
 func _docker_run_sh()	{ docker run 	-ti $1 -- sh }
 func _docker_exec_sh()	{ docker exec 	-ti $1 -- sh }
+func _kdnss() {
+    kubectl get ns -o name |grep $1 | xargs kubectl delete --wait=false
+}
+
 
 alias k='kubectl -n $K_NS'
 alias ko='k -o wide'
+alias kl='k logs'
 alias kg='ko get'
 alias kp='kg pods'
 alias ks='kg svc'
@@ -18,6 +23,7 @@ alias kdp='kd pods'
 alias kex='_kubectl_exec_sh'
 alias dr='_docker_run_sh'
 alias de='_docker_exec_sh'
+alias kdnss='_kdnss'
 
 func _kubectl_exec_sh() { k exec -ti $1 -- sh }
 
