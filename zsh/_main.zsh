@@ -84,7 +84,7 @@ compinit
 
 #自动补全缓存
 zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path .zcache
+zstyle ':completion::complete:*' cache-path ~/.zcache
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 #自动补全选项
