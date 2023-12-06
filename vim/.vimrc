@@ -109,20 +109,6 @@ set shiftwidth=4
 set expandtab
 
 
-"Tlist!
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Auto_Update = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-"let Tlist_Close_On_Select = 1
-nmap <silent> <F8> :TlistToggle<CR>
-nmap <silent> <F5> :TlistUpdate<CR>
-"set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
-"set laststatus=2
-"set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)i
-
-
 nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
 

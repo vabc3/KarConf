@@ -15,18 +15,18 @@ URxvt.color10: #60f080
 URxvt.color11: #e0c060
 URxvt.color12: DodgerBlue
 URxvt.depth: 32
-URxvt.background: rgba:0000/0000/0088/cccc
+URxvt.background: rgba:0000/0000/0088/dddd
 !urxvt*colorBD: white
 !urxvt*colorIT: green
 URxvt.foreground: gray84
 URxvt.cursorColor: orange
 
 !Perl
-URxvt.perl-lib: /home/rquiss/git/urxvt-perls
-URxvt.perl-ext-common: clipboard
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+!URxvt.perl-lib: /home/rquiss/git/urxvt-perls
+!URxvt.perl-ext-common: clipboard
+!URxvt.keysym.M-c:   perl:clipboard:copy
+!URxvt.keysym.M-v:   perl:clipboard:paste
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 !Shape
 !URxvt.letterSpace: -1

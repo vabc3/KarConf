@@ -4,3 +4,5 @@ alias b='cargo build'
 alias r='cargo run'
 alias t='cargo test'
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

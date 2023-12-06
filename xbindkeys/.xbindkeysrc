@@ -26,5 +26,5 @@ Mod4 + y
 Mod4 + x
 
 #"xterm"
-"/opt/VSCode-linux-x64/code"
+"vscode-bin"
 Mod4 + v
